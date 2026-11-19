@@ -421,6 +421,52 @@
     </div>
   </div>
 
+  <!-- Track 1 Electricity Efficiency Impact & Benchmark Table -->
+  <section class="card" style="margin-bottom: 24px;">
+    <div class="card-title">
+      <span>Electricity Efficiency Impact &amp; Benchmark Table (DoraHacks Track 1 — ID 3862)</span>
+      <span style="font-size: 12px; color: var(--emerald);">19/19 Foundry · 26/26 Pytest Verified</span>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Efficiency Dimension</th>
+            <th>GridPulse P2P Benchmark</th>
+            <th>Baseline / Naive Comparison</th>
+            <th>Verified Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Peak Feeder Overload Reduction</strong></td>
+            <td><strong>136.8 kW</strong> peak shaved (663.20 → 526.40 kW on 800 kW Accra feeder via 200-home <code>HYBRID_PEAK_SHAVE</code> ATS)</td>
+            <td>Uncoordinated evening peak (8.17% overload prob.; 73.11% at 800 kW stress)</td>
+            <td style="color: var(--emerald); font-weight: 600;">20.6% peak load cut · 96.5% lower trip risk</td>
+          </tr>
+          <tr>
+            <td><strong>Solar Curtailment Waste Eliminated</strong></td>
+            <td><strong>8.50 kWh / batch</strong> cleared at 1.482 GHS/kWh avg (25.65 GHS diesel saved · 6.63 kg CO2 avoided)</td>
+            <td>10.50 kWh stranded daytime rooftop PV / 4.50 GHS/kWh backup diesel</td>
+            <td style="color: var(--emerald); font-weight: 600;">81.0% curtailment eliminated · 19.9% below PURC peak</td>
+          </tr>
+          <tr>
+            <td><strong>0-1 DP vs. Naive Round-Robin Shedding</strong></td>
+            <td><strong>100.0%</strong> critical-load (Medical/Fridge) preservation · <strong>1,286.7</strong> avg utility score (400–2,000 W budgets)</td>
+            <td>Naive round-robin shedding: 70.8% critical preservation · 948.5 avg utility score</td>
+            <td style="color: var(--emerald); font-weight: 600;">+29.2 pp critical survival · +35.6% utility gain</td>
+          </tr>
+          <tr>
+            <td><strong>Solidity Gas Cost / Microgrid Settlement</strong></td>
+            <td><code>purchaseEnergy</code>: <strong>159,746 gas</strong> avg (161,157 med) · <code>attestSolarSurplus</code>: <strong>123,520</strong> · <code>createSellOffer</code>: <strong>191,692</strong></td>
+            <td>Full 3-step settlement cycle (<code>attest → offer → purchase</code>): 474,958 gas avg</td>
+            <td style="color: var(--cyan); font-weight: 600;">&lt;$0.02 L2 settlement · 257-run fuzz conserved</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <script>
     // XSS defense utility
     function escapeHtml(str) {

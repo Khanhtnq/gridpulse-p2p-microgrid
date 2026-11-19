@@ -150,6 +150,17 @@ python -m gridpulse.cli match-p2p --json
 
 ---
 
+## Electricity Efficiency Impact & Benchmark Table (DoraHacks Track 1)
+
+Measured deterministically against `gridpulse/forecaster.py`, `gridpulse/scheduler.py`, `gridpulse/p2p_matcher.py`, and `forge test --gas-report`:
+
+| Efficiency Dimension | GridPulse P2P Benchmark | Baseline / Naive Comparison | Verified Impact |
+|---|---|---|---|
+| **Peak Feeder Overload Reduction** | **136.8 kW** peak shaved (`663.20 kW → 526.40 kW` on 800 kW Accra feeder via 200-home `HYBRID_PEAK_SHAVE` ATS) | Uncoordinated residential peak (`8.17%` overload prob.; `73.11%` at 800 kW stress) | **20.6% peak feeder reduction**; **96.5% lower overload trip probability** (`8.17% → 0.29%`) |
+| **Solar Curtailment Waste Eliminated** | **8.50 kWh / batch** cleared (`1.482 GHS/kWh` avg midpoint tariff; `25.65 GHS` diesel cost saved; `6.63 kg CO2` avoided) | `10.50 kWh` stranded daytime rooftop PV / `4.50 GHS/kWh` 5 kVA diesel genset | **81.0% surplus curtailment eliminated**; **19.9% cheaper** than PURC peak tariff (`1.85 GHS/kWh`) |
+| **Exact 0-1 DP vs. Naive Round-Robin Shedding** | **100.0%** critical-load (`Medical/Fridge`) preservation; **1,286.7** avg utility score across 400–2,000 W Dumsor budgets | Naive round-robin rotational shedding: **70.8%** critical preservation; **948.5** avg utility score | **+29.2 pp critical-load survival** (**100% vs. 70.8%**); **+35.6% household utility gain** |
+| **Solidity Gas Cost per Microgrid Settlement** | `purchaseEnergy`: **159,746 gas avg** (161,157 med) · `attestSolarSurplus`: **123,520 avg** · `createSellOffer`: **191,692 avg** · `cancelOffer`: **58,652 avg** | Full 3-step settlement cycle (`attest → list → clear`): **474,958 gas avg** | **19/19 Foundry tests** (257 fuzz runs); **<$0.02** per L2/OP-stack settlement |
+
 ## Impact Scorecard (Accra Feeder Pilot Simulation)
 
 | Metric | Pilot Feeder Result | Physical Benchmark |

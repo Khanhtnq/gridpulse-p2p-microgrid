@@ -423,9 +423,11 @@ contract SolarMicrogridTest is TestBase {
         escrow.purchaseEnergy(offerId, whSold);
         vm.stopPrank();
 
-        // Prosumer cancels remainder
-        vm.prank(ALICE_PROSUMER);
-        escrow.cancelOffer(offerId);
+        // Prosumer cancels remainder if partially filled
+        if (whSold < whGenerated) {
+            vm.prank(ALICE_PROSUMER);
+            escrow.cancelOffer(offerId);
+        }
 
         // INVARIANT 1: Total Kilowatt Credit Tokens Conserved
         assertEq(
