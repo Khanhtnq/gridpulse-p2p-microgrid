@@ -8,6 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
 - **Live Interactive Digital Twin**: [https://khanhtnq.github.io/gridpulse-p2p-microgrid/](https://khanhtnq.github.io/gridpulse-p2p-microgrid/)
+- **YouTube Demo Video (1080p Narrated)**: [https://youtu.be/59xCeOPkNEc](https://youtu.be/59xCeOPkNEc) ([Watch on YouTube](https://www.youtube.com/watch?v=59xCeOPkNEc))
 - **1080p Demo Video (`40s`, `30fps`)**: [`assets/demo_1080p.mp4`](assets/demo_1080p.mp4) | [Hosted MP4](https://khanhtnq.github.io/gridpulse-p2p-microgrid/demo_1080p.mp4)
 
 **GridPulse P2P** is an end-to-end decentralized energy efficiency and solar microgrid settlement protocol built for **DoraHacks Hackathon 2026 Challenge (ID 1898) — Track 1: Improving Electricity Efficiency (Track ID 3862)**.
